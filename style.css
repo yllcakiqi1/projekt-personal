@@ -5,112 +5,164 @@
     box-sizing: border-box;
 }
 
-/* Body Styling */
+/* Body and Overall Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Header and Navigation Bar */
+/* Navigation Bar Styles */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #000;
-    z-index: 10;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
 }
 
-nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
+header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-nav .logo a {
-    text-decoration: none;
+header .logo a {
     color: #fff;
     font-size: 24px;
-    font-weight: bold;
+    text-decoration: none;
 }
 
-.nav-links {
+header .nav-links {
     list-style: none;
     display: flex;
+    gap: 20px;
 }
 
-.nav-links li {
-    margin-right: 20px;
+header .nav-links li {
+    display: inline;
 }
 
-.nav-links li a {
-    text-decoration: none;
+header .nav-links li a {
     color: #fff;
+    text-decoration: none;
     font-size: 18px;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
-.nav-links li a:hover {
-    background-color: #f60; /* Orange hover effect */
-    border-radius: 5px;
+header .nav-links li a:hover {
+    color: orange; /* Change text color to orange on hover */
+    padding: 5px 10px; /* Optional: Adds padding to give a button-like effect */
+    border-radius: 4px; /* Optional: Slightly rounded corners */
 }
 
-/* Container for Horizontal Layout */
+/* Section Layout for Devices and Games */
 .horizontal-layout {
     display: flex;
-    flex-wrap: wrap;  /* This allows wrapping to a new line if needed */
-    justify-content: space-around; /* Space the sections evenly */
-    gap: 20px;
-    margin: 20px;
+    justify-content: space-around; /* Distribute sections evenly */
+    flex-wrap: wrap; /* Allows sections to wrap to the next line when needed */
+    margin: 20px auto;
+    max-width: 1200px;
 }
 
-/* Individual Section Block */
+/* Styling for Individual Device and Game Cards */
 .device, .game {
-    flex: 1 1 300px;  /* Allow sections to grow and shrink with a minimum width of 300px */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    flex: 1 1 22%; /* Allow the sections to shrink or grow, keeping each section around 22% width */
+    margin: 10px;
     text-align: center;
-    margin-bottom: 20px; /* Space below each section */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .device img, .game img {
-    width: 100%;
-    max-width: 250px;
-    margin-bottom: 15px;
+    width: 100%; /* Ensure images are responsive */
+    height: auto;
+    border-radius: 8px;
 }
 
 .device h2, .game h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    color: #333;
+    margin-top: 10px;
 }
 
 .device p, .game p {
     font-size: 16px;
-    line-height: 1.6;
-    color: #f60;
+    color: #555;
+    margin-top: 5px;
 }
 
-/* Section Styling */
-section {
-    padding: 100px 20px;
-    margin: 20px auto;
-    width: 100%;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Descriptions */
+.device-description, .game-description {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter text for the description */
+    margin-top: 10px; /* Adds space between the price and the description */
+    line-height: 1.5;
 }
 
 /* Footer Styling */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #000;
+    background-color: #333;
     color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .device, .game {
+        flex: 1 1 45%; /* On medium screens, allow two items per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .device, .game {
+        flex: 1 1 100%; /* On small screens, stack the items vertically */
+    }
+
+    header .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Home Section */
+.home-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* About Us Section */
+.about-content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 10px;
 }
